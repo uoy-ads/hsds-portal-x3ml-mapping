@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x3ml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      source_type="xpath"
+      version="1.0"
+      xsi:noNamespaceSchemaLocation="https://isl.ics.forth.gr/x3ml/schema/x3ml.xsd">
+   <info>
+      <title>VAG Dendrochronology</title>
+      <general_description/>
+      <source>
+         <source_info>
+            <source_schema schema_file="vag_dendro_export_cleaned.xml" type="xml" version="">vag_dendro_export_cleaned</source_schema>
+            <namespaces>
+               <namespace prefix="" uri=""/>
+            </namespaces>
+         </source_info>
+      </source>
+      <target>
+         <target_info>
+            <target_schema schema_file="AO-CAT1.2.2.rdfs" type="rdfs" version="">AO-CAT1.2.2</target_schema>
+            <namespaces>
+               <namespace prefix="aocat"
+                          uri="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/"/>
+               <namespace prefix="owl" uri="http://www.w3.org/2002/07/owl#"/>
+               <namespace prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
+               <namespace prefix="skos" uri="http://www.w3.org/2004/02/skos/core#"/>
+               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
+               <namespace prefix="crmpe" uri="http://parthenos.d4science.org/CRMext/CRMpe/"/>
+               <namespace prefix="crm" uri="http://www.cidoc-crm.org/cidoc-crm/"/>
+               <namespace prefix="base"
+                          uri="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/"/>
+            </namespaces>
+         </target_info>
+      </target>
+      <mapping_info>
+         <mapping_created_by_org/>
+         <mapping_created_by_person/>
+         <in_collaboration_with/>
+      </mapping_info>
+      <example_data_info>
+         <example_data_from/>
+         <example_data_contact_person/>
+         <example_data_source_record/>
+         <generator_policy_info/>
+         <example_data_target_record/>
+         <thesaurus_info/>
+      </example_data_info>
+   </info>
+   <namespaces>
+      <namespace prefix="ariadneplus" uri="https://ariadne-infrastructure.eu/aocat/"/>
+      <namespace prefix="lexvo" uri="http://lexvo.org/id/iso639-2/"/>
+   </namespaces>
+   <mappings>
+      <mapping>
+         <domain>
+            <source_node>//record</source_node>
+            <target_node>
+               <entity>
+                  <type>aocat:AO_Individual_Data_Resource</type>
+                  <instance_generator name="DataResourceURI-2">
+                     <arg name="provider" type="constant">HSDS</arg>
+                     <arg name="term" type="xpath">original_id/text()</arg>
+                  </instance_generator>
+                  <label_generator name="CompositeLabel">
+                     <arg name="label" type="constant">Resource</arg>
+                     <arg name="text" type="xpath">original_id/text()</arg>
+                  </label_generator>
+                  <additional>
+                     <relationship>aocat:has_language</relationship>
+                     <entity>
+                        <type>aocat:AO_Concept</type>
+                        <instance_generator name="LangURI">
+                           <arg name="term" type="constant">eng</arg>
+                        </instance_generator>
+                        <label_generator name="prefLabel">
+                           <arg name="text" type="constant">English</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_ARIADNE_subject</relationship>
+                     <entity>
+                        <type>aocat:AO_Concept</type>
+                        <instance_info>
+                           <constant>Date</constant>
+                        </instance_info>
+                        <instance_generator name="ConceptURI-2">
+                           <arg name="scheme" type="constant">AO_Subject</arg>
+                           <arg name="term" type="constant">Date</arg>
+                        </instance_generator>
+                        <label_generator name="prefLabel">
+                           <arg name="text" type="constant">Date</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_data_type</relationship>
+                     <entity>
+                        <type>aocat:AO_Concept</type>
+                        <instance_generator name="ConceptURI-2">
+                           <arg name="scheme" type="constant">AO_DataType</arg>
+                           <arg name="term" type="constant">Structured Data</arg>
+                        </instance_generator>
+                        <label_generator name="prefLabel">
+                           <arg name="text" type="constant">Structured Data</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_type</relationship>
+                     <entity>
+                        <type>aocat:AO_Concept</type>
+                        <instance_info>
+                           <constant>record</constant>
+                        </instance_info>
+                        <instance_generator name="ConceptURI-2">
+                           <arg name="scheme" type="constant">AO_Type</arg>
+                           <arg name="term" type="constant">record</arg>
+                        </instance_generator>
+                        <label_generator name="prefLabel">
+                           <arg name="text" type="constant">record</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_access_policy</relationship>
+                     <entity>
+                        <type>owl:Thing</type>
+                        <instance_generator name="URIorUUID">
+                           <arg name="text" type="constant">https://archaeologydataservice.ac.uk/about/policies/use-access-to-data/ads-terms-of-use-and-access/</arg>
+                        </instance_generator>
+                        <label_generator name="SimpleLabel">
+                           <arg name="label" type="constant">https://archaeologydataservice.ac.uk/about/policies/use-access-to-data/ads-terms-of-use-and-access/</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_access_rights</relationship>
+                     <entity>
+                        <type>xsd:string</type>
+                        <instance_generator name="Literal">
+                           <arg name="text" type="constant">ADS Terms of Use and Access</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </instance_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:is_part_of</relationship>
+                     <entity>
+                        <type>aocat:AO_Collection</type>
+                        <instance_info>
+                           <constant>https://ariadne-infrastructure.eu/aocat/Collection/ADS/85B93F87-3ACC-3E22-8100-C2EB4342651B</constant>
+                        </instance_info>
+                        <instance_generator name="URIorUUID">
+                           <arg name="text" type="constant">https://ariadne-infrastructure.eu/aocat/Collection/ADS/85B93F87-3ACC-3E22-8100-C2EB4342651B</arg>
+                        </instance_generator>
+                        <label_generator name="SimpleLabel">
+                           <arg name="label" type="constant">Dendrochronology Database</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_native_subject</relationship>
+                     <entity>
+                        <type>aocat:AO_Concept</type>
+                        <instance_info>
+                           <language>en</language>
+                           <constant>Heritage science</constant>
+                        </instance_info>
+                        <instance_generator name="ConceptURI">
+                           <arg name="term" type="constant">Heritage science</arg>
+                        </instance_generator>
+                        <label_generator name="prefLabel">
+                           <arg name="text" type="constant">Heritage science</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_creator</relationship>
+                     <entity>
+                        <type>aocat:AO_Agent</type>
+                        <instance_info>
+                           <language>en</language>
+                           <constant>Vernacular Architecture Group (VAG)</constant>
+                        </instance_info>
+                        <instance_generator name="AgentURI">
+                           <arg name="term" type="constant">Vernacular Architecture Group (VAG)</arg>
+                        </instance_generator>
+                        <label_generator name="SimpleLabel">
+                           <arg name="label" type="constant">Vernacular Architecture Group (VAG)</arg>
+                        </label_generator>
+                        <additional>
+                           <relationship>aocat:has_name</relationship>
+                           <entity>
+                              <type>xsd:string</type>
+                              <instance_generator name="Literal">
+                                 <arg name="text" type="constant">Vernacular Architecture Group (VAG)</arg>
+                                 <arg name="language" type="constant">en</arg>
+                              </instance_generator>
+                           </entity>
+                        </additional>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_owner</relationship>
+                     <entity>
+                        <type>aocat:AO_Agent</type>
+                        <instance_info>
+                           <language>en</language>
+                           <constant>Vernacular Architecture Group (VAG)</constant>
+                        </instance_info>
+                        <instance_generator name="AgentURI">
+                           <arg name="term" type="constant">Vernacular Architecture Group (VAG)</arg>
+                        </instance_generator>
+                        <label_generator name="SimpleLabel">
+                           <arg name="label" type="constant">Vernacular Architecture Group (VAG)</arg>
+                        </label_generator>
+                        <additional>
+                           <relationship>aocat:has_name</relationship>
+                           <entity>
+                              <type>xsd:string</type>
+                              <instance_generator name="Literal">
+                                 <arg name="text" type="constant">Vernacular Architecture Group (VAG)</arg>
+                                 <arg name="language" type="constant">en</arg>
+                              </instance_generator>
+                           </entity>
+                        </additional>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_contributor</relationship>
+                     <entity>
+                        <type>aocat:AO_Agent</type>
+                        <instance_info>
+                           <language>en</language>
+                           <constant>Vernacular Architecture Group (VAG)</constant>
+                        </instance_info>
+                        <instance_generator name="AgentURI">
+                           <arg name="term" type="constant">Vernacular Architecture Group (VAG)</arg>
+                        </instance_generator>
+                        <label_generator name="SimpleLabel">
+                           <arg name="label" type="constant">Vernacular Architecture Group (VAG)</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                        <additional>
+                           <relationship>aocat:has_name</relationship>
+                           <entity>
+                              <type>xsd:string</type>
+                              <instance_generator name="Literal">
+                                 <arg name="text" type="constant">Vernacular Architecture Group (VAG)</arg>
+                                 <arg name="language" type="constant">en</arg>
+                              </instance_generator>
+                           </entity>
+                        </additional>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_responsible</relationship>
+                     <entity>
+                        <type>aocat:AO_Agent</type>
+                        <instance_info>
+                           <language>en</language>
+                           <constant>Vernacular Architecture Group (VAG)</constant>
+                        </instance_info>
+                        <instance_generator name="AgentURI">
+                           <arg name="term" type="constant">Vernacular Architecture Group (VAG)</arg>
+                        </instance_generator>
+                        <label_generator name="SimpleLabel">
+                           <arg name="label" type="constant">Vernacular Architecture Group (VAG)</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                        <additional>
+                           <relationship>aocat:has_name</relationship>
+                           <entity>
+                              <type>xsd:string</type>
+                              <instance_generator name="Literal">
+                                 <arg name="text" type="constant">Vernacular Architecture Group (VAG)</arg>
+                                 <arg name="language" type="constant">en</arg>
+                              </instance_generator>
+                           </entity>
+                        </additional>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_publisher</relationship>
+                     <entity>
+                        <type>aocat:AO_Agent</type>
+                        <instance_info>
+                           <language>en</language>
+                           <constant>Archaeology Data Service</constant>
+                        </instance_info>
+                        <instance_generator name="AgentURI">
+                           <arg name="term" type="constant">Archaeology Data Service</arg>
+                        </instance_generator>
+                        <label_generator name="SimpleLabel">
+                           <arg name="label" type="constant">Archaeology Data Service</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                        <additional>
+                           <relationship>aocat:has_name</relationship>
+                           <entity>
+                              <type>xsd:string</type>
+                              <instance_generator name="Literal">
+                                 <arg name="text" type="constant">Archaeology Data Service</arg>
+                                 <arg name="language" type="constant">en</arg>
+                              </instance_generator>
+                           </entity>
+                        </additional>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:was_created_on</relationship>
+                     <entity>
+                        <type>xsd:dateTime</type>
+                        <instance_generator name="Literal">
+                           <arg name="text" type="constant">2000-02-01</arg>
+                        </instance_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:was_issued</relationship>
+                     <entity>
+                        <type>xsd:dateTime</type>
+                        <instance_generator name="Literal">
+                           <arg name="text" type="constant">2001-12-01</arg>
+                        </instance_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:was_modified</relationship>
+                     <entity>
+                        <type>xsd:dateTime</type>
+                        <instance_generator name="Literal">
+                           <arg name="text" type="constant">2025-07-18</arg>
+                        </instance_generator>
+                     </entity>
+                  </additional>
+               </entity>
+            </target_node>
+         </domain>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>native_period</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_temporal_coverage</relationship>
+                  <entity>
+                     <type>aocat:AO_Temporal_Region</type>
+                     <instance_generator name="Time-SpanURI">
+                        <arg name="term" type="xpath">text()</arg>
+                     </instance_generator>
+                     <label_generator name="CompositeLabel">
+                        <arg name="label" type="constant">Temporal region</arg>
+                        <arg name="text" type="xpath">text()</arg>
+                     </label_generator>
+                  </entity>
+                  <relationship>aocat:has_native_period</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>native_period</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="ConceptURI-2">
+                        <arg name="scheme" type="constant">ADS</arg>
+                        <arg name="term" type="xpath">concat(upper-case(text()), '-', ../country/name/text())</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">text()</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>place</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_title</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>place</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">concat(text(), " (Dendrochronology Date)")</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                     <label_generator name="Literal">
+                        <arg name="text" type="xpath">concat(text(), " (Dendrochronology Date)")</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>native_century</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_temporal_coverage</relationship>
+                  <entity>
+                     <type>aocat:AO_Temporal_Region</type>
+                     <instance_generator name="Time-SpanURI">
+                        <arg name="term" type="xpath">text()</arg>
+                     </instance_generator>
+                     <label_generator name="CompositeLabel">
+                        <arg name="label" type="constant">Temporal region</arg>
+                        <arg name="text" type="xpath">text()</arg>
+                     </label_generator>
+                  </entity>
+                  <relationship>aocat:has_native_period</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>native_century</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="ConceptURI-2">
+                        <arg name="scheme" type="constant">ADS</arg>
+                        <arg name="term" type="xpath">concat(upper-case(text()), '-', ../country/name/text())</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">text()</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>original_id</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_original_id</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>original_id</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">text()</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>latitude</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_spatial_coverage</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>latitude</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Spatial_Region_Point</type>
+                     <instance_generator name="UUID"/>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">concat(text()," - ",../longitude/text())</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_latitude</relationship>
+                        <entity>
+                           <type>xsd:decimal</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">text()</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                     <additional>
+                        <relationship>aocat:has_longitude</relationship>
+                        <entity>
+                           <type>xsd:decimal</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">../longitude/text()</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>country</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_spatial_coverage</relationship>
+                  <entity>
+                     <type>aocat:AO_Spatial_Region</type>
+                     <instance_generator name="PlaceURI">
+                        <arg name="term" type="xpath">name/text()</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">name/text()</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_place_name</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">name/text()</arg>
+                              <arg name="language" type="constant">en</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+                  <relationship>aocat:has_country</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>country</source_node>
+               <target_node>
+                  <entity>
+                     <type>owl:Thing</type>
+                     <instance_generator name="URIorUUID">
+                        <arg name="text" type="xpath">name/text()</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">name/text()</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>county</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_spatial_coverage</relationship>
+                  <entity>
+                     <type>aocat:AO_Spatial_Region_StdName</type>
+                     <instance_generator name="PlaceURI">
+                        <arg name="term" type="xpath">text()</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">text()</arg>
+                     </label_generator>
+                  </entity>
+                  <relationship>aocat:has_place_name</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>county</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">name/text()</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>native_monument</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_native_subject</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>native_monument</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="ConceptURI-2">
+                        <arg name="scheme" type="constant">ADS</arg>
+                        <arg name="term" type="xpath">upper-case(text())</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">text()</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>native_structure</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_native_subject</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>native_structure</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="ConceptURI-2">
+                        <arg name="scheme" type="constant">ADS</arg>
+                        <arg name="term" type="xpath">upper-case(text())</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">text()</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>contributor</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_contributor</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>contributor</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Agent</type>
+                     <instance_generator name="AgentURI">
+                        <arg name="term" type="xpath">text()</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">text()</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_name</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">text()</arg>
+                              <arg name="language" type="constant">en</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>description</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_description</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>description</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">text()</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>felling_start_date</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_temporal_coverage</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>felling_start_date</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Temporal_Region</type>
+                     <instance_generator name="Time-SpanURI">
+                        <arg name="term" type="xpath">text()</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">text()</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:from</relationship>
+                        <entity>
+                           <type>xsd:dateTime</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">text()</arg>
+                           </instance_generator>
+                           <label_generator name="prefLabel">
+                              <arg name="text" type="xpath">text()</arg>
+                           </label_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>felling_end_date</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_temporal_coverage</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>felling_end_date</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Temporal_Region</type>
+                     <instance_generator name="Time-SpanURI">
+                        <arg name="term" type="xpath">text()</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">text()</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:until</relationship>
+                        <entity>
+                           <type>xsd:dateTime</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">text()</arg>
+                           </instance_generator>
+                           <label_generator name="prefLabel">
+                              <arg name="text" type="xpath">text()</arg>
+                           </label_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>original_id</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_landing_page</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>original_id</source_node>
+               <target_node>
+                  <entity>
+                     <type>owl:Thing</type>
+                     <instance_generator name="URIorUUID">
+                        <arg name="text" type="xpath">concat("https://archaeologydataservice.ac.uk/archives/collections/view/vag_dendro/fullrecord.cfm?id=",text())</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">concat("https://archaeologydataservice.ac.uk/archives/collections/view/vag_dendro/fullrecord.cfm?id=",text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>place</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_spatial_coverage</relationship>
+                  <entity>
+                     <type>aocat:AO_Spatial_Region</type>
+                     <instance_generator name="PlaceURI">
+                        <arg name="term" type="xpath">text()</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">text()</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+                  <relationship>aocat:has_place_name</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>place</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">text()</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+      </mapping>
+   </mappings>
+</x3ml>
