@@ -1,0 +1,925 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x3ml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" source_type="xpath" version="1.0" xsi:noNamespaceSchemaLocation="https://isl.ics.forth.gr/x3ml/schema/x3ml.xsd">
+   <info>
+      <title>ROAD2026</title>
+      <general_description>Made with the AO-Cat X3ML Mapper v18 (aocat_pipeline utils).</general_description>
+      <source>
+         <source_info>
+            <source_schema schema_file="ROAD2026.xml" type="xml" version="">ROAD2026</source_schema>
+            <namespaces>
+               <namespace prefix="" uri=""/>
+            </namespaces>
+         </source_info>
+      </source>
+      <target>
+         <target_info>
+            <target_schema schema_file="AO-CAT1.2.3.rdfs" type="rdfs" version="1.2.3">AO CAT</target_schema>
+            <namespaces>
+               <namespace prefix="aocat" uri="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/"/>
+               <namespace prefix="owl" uri="http://www.w3.org/2002/07/owl#"/>
+               <namespace prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
+               <namespace prefix="skos" uri="http://www.w3.org/2004/02/skos/core#"/>
+               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
+               <namespace prefix="crmpe" uri="http://parthenos.d4science.org/CRMext/CRMpe/"/>
+               <namespace prefix="crm" uri="http://www.cidoc-crm.org/cidoc-crm/"/>
+            </namespaces>
+         </target_info>
+      </target>
+      <mapping_info>
+         <mapping_created_by_org/>
+         <mapping_created_by_person/>
+         <in_collaboration_with/>
+      </mapping_info>
+      <example_data_info>
+         <example_data_from/>
+         <example_data_contact_person/>
+         <example_data_source_record/>
+         <generator_policy_info>ARIADNEplus Generator Policy version 1.10</generator_policy_info>
+         <example_data_target_record/>
+         <thesaurus_info/>
+      </example_data_info>
+   </info>
+   <namespaces>
+      <namespace prefix="ariadneplus" uri="https://ariadne-infrastructure.eu/aocat/"/>
+      <namespace prefix="lexvo" uri="http://lexvo.org/id/iso639-2/"/>
+   </namespaces>
+   <mappings>
+      <mapping>
+         <domain>
+            <source_node>//assemblage/..</source_node>
+            <target_node>
+               <entity>
+                  <type>aocat:AO_Collection</type>
+                  <instance_info>
+                     <constant>ROAD2026</constant>
+                  </instance_info>
+                  <instance_generator name="CollectionURI-2">
+                     <arg name="provider" type="constant">ADS</arg>
+                     <arg name="term" type="constant">ROAD2026</arg>
+                  </instance_generator>
+                  <label_generator name="prefLabel">
+                     <arg name="text" type="constant">ROAD2026</arg>
+                     <arg name="language" type="constant">en</arg>
+                  </label_generator>
+                  <additional>
+                     <relationship>aocat:has_title</relationship>
+                     <entity>
+                        <type>xsd:string</type>
+                        <instance_info>
+                           <constant>ROAD2026</constant>
+                        </instance_info>
+                        <instance_generator name="Literal">
+                           <arg name="text" type="constant">ROAD2026</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </instance_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_description</relationship>
+                     <entity>
+                        <type>xsd:string</type>
+                        <instance_info>
+                           <constant>Whatever Description</constant>
+                        </instance_info>
+                        <instance_generator name="Literal">
+                           <arg name="text" type="constant">Whatever Description</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </instance_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_original_id</relationship>
+                     <entity>
+                        <type>xsd:string</type>
+                        <instance_info>
+                           <constant>Whatever Oridinal ID</constant>
+                        </instance_info>
+                        <instance_generator name="Literal">
+                           <arg name="text" type="constant">Whatever Oridinal ID</arg>
+                        </instance_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_type</relationship>
+                     <entity>
+                        <type>aocat:AO_Concept</type>
+                        <instance_info>
+                           <constant>collection</constant>
+                        </instance_info>
+                        <instance_generator name="ConceptURI-2">
+                           <arg name="scheme" type="constant">AO_Type</arg>
+                           <arg name="term" type="constant">collection</arg>
+                        </instance_generator>
+                        <label_generator name="prefLabel">
+                           <arg name="text" type="constant">collection</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_ARIADNE_subject</relationship>
+                     <entity>
+                        <type>aocat:AO_Concept</type>
+                        <instance_info>
+                           <constant>Artefact</constant>
+                        </instance_info>
+                        <instance_generator name="ConceptURI-2">
+                           <arg name="scheme" type="constant">AO_Subject</arg>
+                           <arg name="term" type="constant">Artefact</arg>
+                        </instance_generator>
+                        <label_generator name="prefLabel">
+                           <arg name="text" type="constant">Artefact</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_access_rights</relationship>
+                     <entity>
+                        <type>xsd:string</type>
+                        <instance_info>
+                           <constant>ADS Terms of Use and Access</constant>
+                        </instance_info>
+                        <instance_generator name="Literal">
+                           <arg name="text" type="constant">ADS Terms of Use and Access</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </instance_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_language</relationship>
+                     <entity>
+                        <type>aocat:AO_Concept</type>
+                        <instance_info>
+                           <constant>eng</constant>
+                        </instance_info>
+                        <instance_generator name="LangURI">
+                           <arg name="term" type="constant">eng</arg>
+                        </instance_generator>
+                        <label_generator name="prefLabel">
+                           <arg name="text" type="constant">English</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_content_of_type</relationship>
+                     <entity>
+                        <type>aocat:AO_Concept</type>
+                        <instance_info>
+                           <constant>Structured Data</constant>
+                        </instance_info>
+                        <instance_generator name="ConceptURI-2">
+                           <arg name="scheme" type="constant">AO_DataType</arg>
+                           <arg name="term" type="constant">Structured Data</arg>
+                        </instance_generator>
+                        <label_generator name="prefLabel">
+                           <arg name="text" type="constant">Structured Data</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:was_issued</relationship>
+                     <entity>
+                        <type>xsd:dateTime</type>
+                        <instance_info>
+                           <constant>2026-11-17</constant>
+                        </instance_info>
+                        <instance_generator name="Literal">
+                           <arg name="text" type="constant">2026-11-17</arg>
+                        </instance_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:was_modified</relationship>
+                     <entity>
+                        <type>xsd:dateTime</type>
+                        <instance_info>
+                           <constant>2026-11-17</constant>
+                        </instance_info>
+                        <instance_generator name="Literal">
+                           <arg name="text" type="constant">2026-11-17</arg>
+                        </instance_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_creator</relationship>
+                     <entity>
+                        <type>aocat:AO_Agent</type>
+                        <instance_info>
+                           <constant>Project &quot;The Role of Culture in Early Expansions of Humans&quot; (ROCEEH)</constant>
+                        </instance_info>
+                        <instance_generator name="AgentURI">
+                           <arg name="term" type="constant">Project &quot;The Role of Culture in Early Expansions of Humans&quot; (ROCEEH)</arg>
+                        </instance_generator>
+                        <label_generator name="SimpleLabel">
+                           <arg name="label" type="constant">Project &quot;The Role of Culture in Early Expansions of Humans&quot; (ROCEEH)</arg>
+                        </label_generator>
+                        <additional>
+                           <relationship>aocat:has_name</relationship>
+                           <entity>
+                              <type>xsd:string</type>
+                              <instance_generator name="Literal">
+                                 <arg name="text" type="constant">Project &quot;The Role of Culture in Early Expansions of Humans&quot; (ROCEEH)</arg>
+                              </instance_generator>
+                           </entity>
+                        </additional>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_publisher</relationship>
+                     <entity>
+                        <type>aocat:AO_Agent</type>
+                        <instance_info>
+                           <constant>Heidelberg Academy of Sciences and Humanities</constant>
+                        </instance_info>
+                        <instance_generator name="AgentURI">
+                           <arg name="term" type="constant">Heidelberg Academy of Sciences and Humanities</arg>
+                        </instance_generator>
+                        <label_generator name="SimpleLabel">
+                           <arg name="label" type="constant">Heidelberg Academy of Sciences and Humanities</arg>
+                        </label_generator>
+                        <additional>
+                           <relationship>aocat:has_name</relationship>
+                           <entity>
+                              <type>xsd:string</type>
+                              <instance_generator name="Literal">
+                                 <arg name="text" type="constant">Heidelberg Academy of Sciences and Humanities</arg>
+                              </instance_generator>
+                           </entity>
+                        </additional>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_owner</relationship>
+                     <entity>
+                        <type>aocat:AO_Agent</type>
+                        <instance_info>
+                           <constant>Heidelberg Academy of Sciences and Humanities</constant>
+                        </instance_info>
+                        <instance_generator name="AgentURI">
+                           <arg name="term" type="constant">Heidelberg Academy of Sciences and Humanities</arg>
+                        </instance_generator>
+                        <label_generator name="SimpleLabel">
+                           <arg name="label" type="constant">Heidelberg Academy of Sciences and Humanities</arg>
+                        </label_generator>
+                        <additional>
+                           <relationship>aocat:has_name</relationship>
+                           <entity>
+                              <type>xsd:string</type>
+                              <instance_generator name="Literal">
+                                 <arg name="text" type="constant">Heidelberg Academy of Sciences and Humanities</arg>
+                              </instance_generator>
+                           </entity>
+                        </additional>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_responsible</relationship>
+                     <entity>
+                        <type>aocat:AO_Agent</type>
+                        <instance_info>
+                           <constant>Whoever responsible</constant>
+                        </instance_info>
+                        <instance_generator name="AgentURI">
+                           <arg name="term" type="constant">Whoever responsible</arg>
+                        </instance_generator>
+                        <label_generator name="SimpleLabel">
+                           <arg name="label" type="constant">Whoever responsible</arg>
+                        </label_generator>
+                        <additional>
+                           <relationship>aocat:has_name</relationship>
+                           <entity>
+                              <type>xsd:string</type>
+                              <instance_generator name="Literal">
+                                 <arg name="text" type="constant">Whoever responsible</arg>
+                              </instance_generator>
+                           </entity>
+                        </additional>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_contributor</relationship>
+                     <entity>
+                        <type>aocat:AO_Agent</type>
+                        <instance_info>
+                           <constant>ROCEEH</constant>
+                        </instance_info>
+                        <instance_generator name="AgentURI">
+                           <arg name="term" type="constant">ROCEEH</arg>
+                        </instance_generator>
+                        <label_generator name="SimpleLabel">
+                           <arg name="label" type="constant">ROCEEH</arg>
+                        </label_generator>
+                        <additional>
+                           <relationship>aocat:has_name</relationship>
+                           <entity>
+                              <type>xsd:string</type>
+                              <instance_generator name="Literal">
+                                 <arg name="text" type="constant">ROCEEH</arg>
+                              </instance_generator>
+                           </entity>
+                        </additional>
+                     </entity>
+                  </additional>
+               </entity>
+            </target_node>
+         </domain>
+      </mapping>
+      <mapping>
+         <domain>
+            <source_node>//assemblage</source_node>
+            <target_node>
+               <entity>
+                  <type>aocat:AO_Individual_Data_Resource</type>
+                  <instance_generator name="DataResourceURI-2">
+                     <arg name="provider" type="constant">HSDS</arg>
+                     <arg name="term" type="xpath">has_original_id/text()</arg>
+                  </instance_generator>
+                  <label_generator name="CompositeLabel">
+                     <arg name="label" type="constant">Resource</arg>
+                     <arg name="text" type="xpath">has_original_id/text()</arg>
+                  </label_generator>
+                  <additional>
+                     <relationship>aocat:has_language</relationship>
+                     <entity>
+                        <type>aocat:AO_Concept</type>
+                        <instance_info>
+                           <constant>eng</constant>
+                        </instance_info>
+                        <instance_generator name="LangURI">
+                           <arg name="term" type="constant">eng</arg>
+                        </instance_generator>
+                        <label_generator name="prefLabel">
+                           <arg name="text" type="constant">English</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:was_issued</relationship>
+                     <entity>
+                        <type>xsd:dateTime</type>
+                        <instance_info>
+                           <constant>2026-11-17</constant>
+                        </instance_info>
+                        <instance_generator name="Literal">
+                           <arg name="text" type="constant">2026-11-17</arg>
+                        </instance_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_ARIADNE_subject</relationship>
+                     <entity>
+                        <type>aocat:AO_Concept</type>
+                        <instance_info>
+                           <constant>Artefact</constant>
+                        </instance_info>
+                        <instance_generator name="ConceptURI-2">
+                           <arg name="scheme" type="constant">AO_Subject</arg>
+                           <arg name="term" type="constant">Artefact</arg>
+                        </instance_generator>
+                        <label_generator name="prefLabel">
+                           <arg name="text" type="constant">Artefact</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_type</relationship>
+                     <entity>
+                        <type>aocat:AO_Concept</type>
+                        <instance_info>
+                           <constant>provided record</constant>
+                        </instance_info>
+                        <instance_generator name="ConceptURI-2">
+                           <arg name="scheme" type="constant">AO_Type</arg>
+                           <arg name="term" type="constant">provided record</arg>
+                        </instance_generator>
+                        <label_generator name="prefLabel">
+                           <arg name="text" type="constant">provided record</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_data_type</relationship>
+                     <entity>
+                        <type>aocat:AO_Concept</type>
+                        <instance_info>
+                           <constant>Structured Data</constant>
+                        </instance_info>
+                        <instance_generator name="ConceptURI-2">
+                           <arg name="scheme" type="constant">AO_DataType</arg>
+                           <arg name="term" type="constant">Structured Data</arg>
+                        </instance_generator>
+                        <label_generator name="prefLabel">
+                           <arg name="text" type="constant">Structured Data</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_access_rights</relationship>
+                     <entity>
+                        <type>xsd:string</type>
+                        <instance_info>
+                           <constant>ADS Terms of Use and Access</constant>
+                        </instance_info>
+                        <instance_generator name="Literal">
+                           <arg name="text" type="constant">ADS Terms of Use and Access</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </instance_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:is_part_of</relationship>
+                     <entity>
+                        <type>aocat:AO_Collection</type>
+                        <instance_info>
+                           <constant>ROAD2026</constant>
+                        </instance_info>
+                        <instance_generator name="CollectionURI-2">
+                           <arg name="provider" type="constant">ADS</arg>
+                           <arg name="term" type="constant">ROAD2026</arg>
+                        </instance_generator>
+                        <label_generator name="prefLabel">
+                           <arg name="text" type="constant">ROAD2026</arg>
+                           <arg name="language" type="constant">en</arg>
+                        </label_generator>
+                     </entity>
+                  </additional>
+                  <additional>
+                     <relationship>aocat:has_responsible</relationship>
+                     <entity>
+                        <type>aocat:AO_Agent</type>
+                        <instance_info>
+                           <constant>Whoever responsible</constant>
+                        </instance_info>
+                        <instance_generator name="AgentURI">
+                           <arg name="term" type="constant">Whoever responsible</arg>
+                        </instance_generator>
+                        <label_generator name="SimpleLabel">
+                           <arg name="label" type="constant">Whoever responsible</arg>
+                        </label_generator>
+                        <additional>
+                           <relationship>aocat:has_name</relationship>
+                           <entity>
+                              <type>xsd:string</type>
+                              <instance_generator name="Literal">
+                                 <arg name="text" type="constant">Whoever responsible</arg>
+                              </instance_generator>
+                           </entity>
+                        </additional>
+                     </entity>
+                  </additional>
+               </entity>
+            </target_node>
+         </domain>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>has_title</relation>
+               </source_relation>
+               <target_relation>
+                  <if>
+                     <exists>text()[normalize-space()]</exists>
+                  </if>
+                  <relationship>aocat:has_title</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>has_title</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">text()</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>has_description</relation>
+               </source_relation>
+               <target_relation>
+                  <if>
+                     <exists>text()[normalize-space()]</exists>
+                  </if>
+                  <relationship>aocat:has_description</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>has_description</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">text()</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>has_original_id</relation>
+               </source_relation>
+               <target_relation>
+                  <if>
+                     <exists>text()[normalize-space()]</exists>
+                  </if>
+                  <relationship>aocat:has_original_id</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>has_original_id</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">text()</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>source_as_PDF</relation>
+               </source_relation>
+               <target_relation>
+                  <if>
+                     <exists>text()[normalize-space()]</exists>
+                  </if>
+                  <relationship>aocat:has_identifier</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>source_as_PDF</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">text()</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>source_as_PDF[starts-with(normalize-space(.), 'http')]</relation>
+               </source_relation>
+               <target_relation>
+                  <if>
+                     <exists>text()[normalize-space()]</exists>
+                  </if>
+                  <relationship>aocat:has_landing_page</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>source_as_PDF[starts-with(normalize-space(.), 'http')]</source_node>
+               <target_node>
+                  <entity>
+                     <type>owl:Thing</type>
+                     <instance_generator name="URIorUUID">
+                        <arg name="text" type="xpath">text()</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">text()</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>was_modified</relation>
+               </source_relation>
+               <target_relation>
+                  <if>
+                     <exists>text()[normalize-space()]</exists>
+                  </if>
+                  <relationship>aocat:was_modified</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>was_modified</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:dateTime</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">text()</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>subject</relation>
+               </source_relation>
+               <target_relation>
+                  <if>
+                     <exists>text()[normalize-space()]</exists>
+                  </if>
+                  <relationship>aocat:has_native_subject</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>subject</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="ConceptURI-2">
+                        <arg name="scheme" type="constant">ADS</arg>
+                        <arg name="term" type="xpath">upper-case(text())</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">upper-case(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>has_access_rights</relation>
+               </source_relation>
+               <target_relation>
+                  <if>
+                     <exists>text()[normalize-space()]</exists>
+                  </if>
+                  <relationship>aocat:has_access_policy</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>has_access_rights</source_node>
+               <target_node>
+                  <entity>
+                     <type>owl:Thing</type>
+                     <instance_generator name="URIorUUID">
+                        <arg name="text" type="xpath">text()</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">text()</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>has_creator</relation>
+               </source_relation>
+               <target_relation>
+                  <if>
+                     <exists>text()[normalize-space()]</exists>
+                  </if>
+                  <relationship>aocat:has_creator</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>has_creator</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Agent</type>
+                     <instance_generator name="AgentURI">
+                        <arg name="term" type="xpath">text()</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">text()</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_name</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">text()</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>has_contributer</relation>
+               </source_relation>
+               <target_relation>
+                  <if>
+                     <exists>text()[normalize-space()]</exists>
+                  </if>
+                  <relationship>aocat:has_contributor</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>has_contributer</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Agent</type>
+                     <instance_generator name="AgentURI">
+                        <arg name="term" type="xpath">text()</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">text()</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_name</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">text()</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>has_publisher</relation>
+               </source_relation>
+               <target_relation>
+                  <if>
+                     <exists>text()[normalize-space()]</exists>
+                  </if>
+                  <relationship>aocat:has_publisher</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>has_publisher</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Agent</type>
+                     <instance_generator name="AgentURI">
+                        <arg name="term" type="xpath">text()</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">text()</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_name</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">text()</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>has_owner</relation>
+               </source_relation>
+               <target_relation>
+                  <if>
+                     <exists>text()[normalize-space()]</exists>
+                  </if>
+                  <relationship>aocat:has_owner</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>has_owner</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Agent</type>
+                     <instance_generator name="AgentURI">
+                        <arg name="term" type="xpath">text()</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">text()</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_name</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">text()</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>y</relation>
+               </source_relation>
+               <target_relation>
+                  <if>
+                     <and>
+                        <if>
+                           <exists>text()[normalize-space()]</exists>
+                        </if>
+                        <if>
+                           <exists>../x/text()[normalize-space()]</exists>
+                        </if>
+                     </and>
+                  </if>
+                  <relationship>aocat:has_spatial_coverage</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>y</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Spatial_Region_Point</type>
+                     <instance_generator name="UUID"/>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">concat(text(), ' - ', ../x/text())</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_latitude</relationship>
+                        <entity>
+                           <type>xsd:decimal</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">text()</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                     <additional>
+                        <relationship>aocat:has_longitude</relationship>
+                        <entity>
+                           <type>xsd:decimal</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">../x/text()</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>country</relation>
+               </source_relation>
+               <target_relation>
+                  <if>
+                     <and>
+                        <if>
+                           <exists>text()[normalize-space()]</exists>
+                        </if>
+                        <if>
+                           <exists>../wikidata_qcode_uri/text()[normalize-space()]</exists>
+                        </if>
+                     </and>
+                  </if>
+                  <relationship>aocat:has_spatial_coverage</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>country</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Spatial_Region</type>
+                     <instance_generator name="UUID"/>
+                     <additional>
+                        <relationship>aocat:has_country</relationship>
+                        <entity>
+                           <type>owl:Thing</type>
+                           <instance_generator name="URIorUUID">
+                              <arg name="text" type="xpath">../wikidata_qcode_uri/text()</arg>
+                           </instance_generator>
+                           <label_generator name="prefLabel">
+                              <arg name="text" type="xpath">text()</arg>
+                              <arg name="language" type="constant">en</arg>
+                           </label_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+      </mapping>
+   </mappings>
+</x3ml>
+<!-- aocat-mapper-state:eyJ0b29sIjoiYW9jYXQteDNtbC1tYXBwZXIiLCJ2ZXJzaW9uIjoyLCJyb3dzIjpbeyJpZCI6InIyNXR0a2siLCJ0YXJnZXQiOiJkaXJlY3Q6aGFzX3RpdGxlIiwibW9kZSI6ImNvbnN0YW50Iiwic291cmNlIjoiIiwiY29uc3RhbnQiOiJST0FEMjAyNiIsInRyYW5zZm9ybSI6Im5vbmUiLCJwYXJhbSI6IiIsImVuYWJsZWQiOnRydWUsIm9yaWdpbiI6Im5lZWRlZCIsIm5vdGUiOiJUaGUgY29sbGVjdGlvbuKAmXMgbmFtZS4gSXQgbWFrZXMgdGhlIGNvbGxlY3Rpb24gVVJJIChDb2xsZWN0aW9uVVJJLTIgwrcgQURTIMK3IHRpdGxlKSB0aGF0IGV2ZXJ5IHJlY29yZOKAmXMgaXNfcGFydF9vZiB1c2VzIiwicGFydCI6ImNvbGxlY3Rpb24ifSx7ImlkIjoicjI2MG1uOSIsInRhcmdldCI6ImRpcmVjdDpoYXNfZGVzY3JpcHRpb24iLCJtb2RlIjoiY29uc3RhbnQiLCJzb3VyY2UiOiIiLCJjb25zdGFudCI6IldoYXRldmVyIERlc2NyaXB0aW9uIiwidHJhbnNmb3JtIjoibm9uZSIsInBhcmFtIjoiIiwiZW5hYmxlZCI6dHJ1ZSwib3JpZ2luIjoieW91Iiwibm90ZSI6IlJlY29tbWVuZGVkIChBRFMvSFNEUyBndWlkZSkiLCJwYXJ0IjoiY29sbGVjdGlvbiJ9LHsiaWQiOiJyMjdxbDRuIiwidGFyZ2V0IjoiZGlyZWN0Omhhc19vcmlnaW5hbF9pZCIsIm1vZGUiOiJjb25zdGFudCIsInNvdXJjZSI6IiIsImNvbnN0YW50IjoiV2hhdGV2ZXIgT3JpZGluYWwgSUQiLCJ0cmFuc2Zvcm0iOiJub25lIiwicGFyYW0iOiIiLCJlbmFibGVkIjp0cnVlLCJvcmlnaW4iOiJ5b3UiLCJub3RlIjoiUmVxdWlyZWQ6IHRoZSBjb2xsZWN0aW9u4oCZcyBvd24gaWQiLCJwYXJ0IjoiY29sbGVjdGlvbiJ9LHsiaWQiOiJyMjhhazcyIiwidGFyZ2V0IjoiZGlyZWN0Omhhc190eXBlIiwibW9kZSI6ImNvbnN0YW50Iiwic291cmNlIjoiIiwiY29uc3RhbnQiOiJjb2xsZWN0aW9uIiwidHJhbnNmb3JtIjoibm9uZSIsInBhcmFtIjoiIiwiZW5hYmxlZCI6dHJ1ZSwib3JpZ2luIjoiYXV0byIsIm5vdGUiOiIiLCJwYXJ0IjoiY29sbGVjdGlvbiJ9LHsiaWQiOiJyMjl3dXNlIiwidGFyZ2V0IjoiZGlyZWN0Omhhc19BUklBRE5FX3N1YmplY3QiLCJtb2RlIjoiY29uc3RhbnQiLCJzb3VyY2UiOiIiLCJjb25zdGFudCI6IkFydGVmYWN0IiwidHJhbnNmb3JtIjoibm9uZSIsInBhcmFtIjoiIiwiZW5hYmxlZCI6dHJ1ZSwib3JpZ2luIjoieW91Iiwibm90ZSI6IlJlcXVpcmVkOiBvbmUgb2YgdGhlIDE0IEFSSUFETkUgc3ViamVjdHMgKGV4YWN0IHNwZWxsaW5nKSIsInBhcnQiOiJjb2xsZWN0aW9uIn0seyJpZCI6InIzMHAyNnUiLCJ0YXJnZXQiOiJkaXJlY3Q6aGFzX2FjY2Vzc19yaWdodHMiLCJtb2RlIjoiY29uc3RhbnQiLCJzb3VyY2UiOiIiLCJjb25zdGFudCI6IkFEUyBUZXJtcyBvZiBVc2UgYW5kIEFjY2VzcyIsInRyYW5zZm9ybSI6Im5vbmUiLCJwYXJhbSI6IiIsImVuYWJsZWQiOnRydWUsIm9yaWdpbiI6ImF1dG8iLCJub3RlIjoidGhlIHNhbWUgaW4gZXZlcnkgc2FtcGxlIHJlY29yZDogcGxlYXNlIGNoZWNrIiwicGFydCI6ImNvbGxlY3Rpb24ifSx7ImlkIjoicjMxbDRnOCIsInRhcmdldCI6ImRpcmVjdDpoYXNfbGFuZ3VhZ2UiLCJtb2RlIjoiY29uc3RhbnQiLCJzb3VyY2UiOiIiLCJjb25zdGFudCI6ImVuZyIsInRyYW5zZm9ybSI6Im5vbmUiLCJwYXJhbSI6IiIsImVuYWJsZWQiOnRydWUsIm9yaWdpbiI6InlvdSIsIm5vdGUiOiJ0aGUgc2FtZSBpbiBldmVyeSBzYW1wbGUgcmVjb3JkOiBwbGVhc2UgY2hlY2siLCJwYXJ0IjoiY29sbGVjdGlvbiJ9LHsiaWQiOiJyMzJ6NzMwIiwidGFyZ2V0IjoiZGlyZWN0Omhhc19kYXRhX3R5cGUiLCJtb2RlIjoiY29uc3RhbnQiLCJzb3VyY2UiOiIiLCJjb25zdGFudCI6IlN0cnVjdHVyZWQgRGF0YSIsInRyYW5zZm9ybSI6Im5vbmUiLCJwYXJhbSI6IiIsImVuYWJsZWQiOnRydWUsIm9yaWdpbiI6ImF1dG8iLCJub3RlIjoidGhlIHNhbWUgaW4gZXZlcnkgc2FtcGxlIHJlY29yZDogcGxlYXNlIGNoZWNrIiwicGFydCI6ImNvbGxlY3Rpb24ifSx7ImlkIjoicjMzOGRyeiIsInRhcmdldCI6ImRpcmVjdDp3YXNfaXNzdWVkIiwibW9kZSI6ImNvbnN0YW50Iiwic291cmNlIjoiIiwiY29uc3RhbnQiOiIyMDI2LTExLTE3IiwidHJhbnNmb3JtIjoibm9uZSIsInBhcmFtIjoiIiwiZW5hYmxlZCI6dHJ1ZSwib3JpZ2luIjoieW91Iiwibm90ZSI6IlJlcXVpcmVkOiBlbnRlciBhIHZhbHVlIiwicGFydCI6ImNvbGxlY3Rpb24ifSx7ImlkIjoicjM0Y2V6aCIsInRhcmdldCI6ImRpcmVjdDp3YXNfbW9kaWZpZWQiLCJtb2RlIjoiY29uc3RhbnQiLCJzb3VyY2UiOiIiLCJjb25zdGFudCI6IjIwMjYtMTEtMTciLCJ0cmFuc2Zvcm0iOiJub25lIiwicGFyYW0iOiIiLCJlbmFibGVkIjp0cnVlLCJvcmlnaW4iOiJ5b3UiLCJub3RlIjoiUmVxdWlyZWQ6IGVudGVyIGEgdmFsdWUiLCJwYXJ0IjoiY29sbGVjdGlvbiJ9LHsiaWQiOiJyMzVzeXJiIiwidGFyZ2V0IjoiYWdlbnQ6Y3JlYXRvcjphZ2VudF9uYW1lIiwibW9kZSI6ImNvbnN0YW50Iiwic291cmNlIjoiIiwiY29uc3RhbnQiOiJQcm9qZWN0IFwiVGhlIFJvbGUgb2YgQ3VsdHVyZSBpbiBFYXJseSBFeHBhbnNpb25zIG9mIEh1bWFuc1wiIChST0NFRUgpIiwidHJhbnNmb3JtIjoibm9uZSIsInBhcmFtIjoiIiwiZW5hYmxlZCI6dHJ1ZSwib3JpZ2luIjoiYXV0byIsIm5vdGUiOiJ0aGUgc2FtZSBpbiBldmVyeSBzYW1wbGUgcmVjb3JkOiBwbGVhc2UgY2hlY2siLCJwYXJ0IjoiY29sbGVjdGlvbiJ9LHsiaWQiOiJyMzZpcWw5IiwidGFyZ2V0IjoiYWdlbnQ6cHVibGlzaGVyOmFnZW50X25hbWUiLCJtb2RlIjoiY29uc3RhbnQiLCJzb3VyY2UiOiIiLCJjb25zdGFudCI6IkhlaWRlbGJlcmcgQWNhZGVteSBvZiBTY2llbmNlcyBhbmQgSHVtYW5pdGllcyIsInRyYW5zZm9ybSI6Im5vbmUiLCJwYXJhbSI6IiIsImVuYWJsZWQiOnRydWUsIm9yaWdpbiI6ImF1dG8iLCJub3RlIjoidGhlIHNhbWUgaW4gZXZlcnkgc2FtcGxlIHJlY29yZDogcGxlYXNlIGNoZWNrIiwicGFydCI6ImNvbGxlY3Rpb24ifSx7ImlkIjoicjM3ZjF3MCIsInRhcmdldCI6ImFnZW50Om93bmVyOmFnZW50X25hbWUiLCJtb2RlIjoiY29uc3RhbnQiLCJzb3VyY2UiOiIiLCJjb25zdGFudCI6IkhlaWRlbGJlcmcgQWNhZGVteSBvZiBTY2llbmNlcyBhbmQgSHVtYW5pdGllcyIsInRyYW5zZm9ybSI6Im5vbmUiLCJwYXJhbSI6IiIsImVuYWJsZWQiOnRydWUsIm9yaWdpbiI6ImF1dG8iLCJub3RlIjoidGhlIHNhbWUgaW4gZXZlcnkgc2FtcGxlIHJlY29yZDogcGxlYXNlIGNoZWNrIiwicGFydCI6ImNvbGxlY3Rpb24ifSx7ImlkIjoicjM4anpnNCIsInRhcmdldCI6ImFnZW50OnJlc3BvbnNpYmxlOmFnZW50X25hbWUiLCJtb2RlIjoiY29uc3RhbnQiLCJzb3VyY2UiOiIiLCJjb25zdGFudCI6Ildob2V2ZXIgcmVzcG9uc2libGUiLCJ0cmFuc2Zvcm0iOiJub25lIiwicGFyYW0iOiIiLCJlbmFibGVkIjp0cnVlLCJvcmlnaW4iOiJ5b3UiLCJub3RlIjoiUmVxdWlyZWQ6IGVudGVyIGEgdmFsdWUiLCJwYXJ0IjoiY29sbGVjdGlvbiJ9LHsiaWQiOiJyMzlpdHd1IiwidGFyZ2V0IjoiYWdlbnQ6Y29udHJpYnV0b3I6YWdlbnRfbmFtZSIsIm1vZGUiOiJjb25zdGFudCIsInNvdXJjZSI6IiIsImNvbnN0YW50IjoiUk9DRUVIIiwidHJhbnNmb3JtIjoibm9uZSIsInBhcmFtIjoiIiwiZW5hYmxlZCI6dHJ1ZSwib3JpZ2luIjoiYXV0byIsIm5vdGUiOiJ0aGUgc2FtZSBpbiBldmVyeSBzYW1wbGUgcmVjb3JkOiBwbGVhc2UgY2hlY2siLCJwYXJ0IjoiY29sbGVjdGlvbiJ9LHsiaWQiOiJyMnNsM28iLCJ0YXJnZXQiOiJkaXJlY3Q6aGFzX3RpdGxlIiwibW9kZSI6InBhdGgiLCJzb3VyY2UiOiJoYXNfdGl0bGUiLCJjb25zdGFudCI6IiIsInRyYW5zZm9ybSI6Im5vbmUiLCJwYXJhbSI6IiIsImVuYWJsZWQiOnRydWUsIm9yaWdpbiI6ImNvcnB1cyIsIm5vdGUiOiJ1c2VkIGluIDEgcGFzdCBtYXBwaW5nOyB1c2VkIGluIDYgcGFzdCBtYXBwaW5nczsgZmllbGQgbmFtZSIsInBhcnQiOiJyZWNvcmQifSx7ImlkIjoicjFjcmlrIiwidGFyZ2V0IjoiZGlyZWN0Omhhc19kZXNjcmlwdGlvbiIsIm1vZGUiOiJwYXRoIiwic291cmNlIjoiaGFzX2Rlc2NyaXB0aW9uIiwiY29uc3RhbnQiOiIiLCJ0cmFuc2Zvcm0iOiJub25lIiwicGFyYW0iOiIiLCJlbmFibGVkIjp0cnVlLCJvcmlnaW4iOiJjb3JwdXMiLCJub3RlIjoidXNlZCBpbiAxIHBhc3QgbWFwcGluZzsgdXNlZCBpbiA3IHBhc3QgbWFwcGluZ3M7IGZpZWxkIG5hbWUiLCJwYXJ0IjoicmVjb3JkIn0seyJpZCI6InIzaWJudyIsInRhcmdldCI6ImRpcmVjdDpoYXNfb3JpZ2luYWxfaWQiLCJtb2RlIjoicGF0aCIsInNvdXJjZSI6Imhhc19vcmlnaW5hbF9pZCIsImNvbnN0YW50IjoiIiwidHJhbnNmb3JtIjoibm9uZSIsInBhcmFtIjoiIiwiZW5hYmxlZCI6dHJ1ZSwib3JpZ2luIjoiY29ycHVzIiwibm90ZSI6InVzZWQgaW4gMSBwYXN0IG1hcHBpbmc7IHVzZWQgaW4gMyBwYXN0IG1hcHBpbmdzOyBmaWVsZCBuYW1lIiwicGFydCI6InJlY29yZCJ9LHsiaWQiOiJyMTVtem03IiwidGFyZ2V0IjoiZGlyZWN0Omhhc19pZGVudGlmaWVyIiwibW9kZSI6InBhdGgiLCJzb3VyY2UiOiJzb3VyY2VfYXNfUERGIiwiY29uc3RhbnQiOiIiLCJ0cmFuc2Zvcm0iOiJub25lIiwicGFyYW0iOiIiLCJlbmFibGVkIjp0cnVlLCJvcmlnaW4iOiJjb3JwdXMiLCJub3RlIjoidXNlZCBpbiAxIHBhc3QgbWFwcGluZyIsInBhcnQiOiJyZWNvcmQifSx7ImlkIjoicjE3eXJxNSIsInRhcmdldCI6ImRpcmVjdDpoYXNfbGFuZGluZ19wYWdlIiwibW9kZSI6InBhdGgiLCJzb3VyY2UiOiJzb3VyY2VfYXNfUERGW3N0YXJ0cy13aXRoKG5vcm1hbGl6ZS1zcGFjZSguKSwgJ2h0dHAnKV0iLCJjb25zdGFudCI6IiIsInRyYW5zZm9ybSI6Im5vbmUiLCJwYXJhbSI6IiIsImVuYWJsZWQiOnRydWUsIm9yaWdpbiI6InZhbHVlIiwibm90ZSI6Im9ubHkgdGhlIHZhbHVlcyB0aGF0IGFyZSBVUkxzIiwicGFydCI6InJlY29yZCJ9LHsiaWQiOiJyNWswdGIiLCJ0YXJnZXQiOiJkaXJlY3Q6aGFzX2xhbmd1YWdlIiwibW9kZSI6ImNvbnN0YW50Iiwic291cmNlIjoiaGFzX2xhbmd1YWdlIiwiY29uc3RhbnQiOiJlbmciLCJ0cmFuc2Zvcm0iOiJub25lIiwicGFyYW0iOiIiLCJlbmFibGVkIjp0cnVlLCJvcmlnaW4iOiJ5b3UiLCJub3RlIjoidXNlZCBpbiA0IHBhc3QgbWFwcGluZ3M7IGZpZWxkIG5hbWUiLCJwYXJ0IjoicmVjb3JkIn0seyJpZCI6InIyMWVpajUiLCJ0YXJnZXQiOiJkaXJlY3Q6d2FzX2lzc3VlZCIsIm1vZGUiOiJjb25zdGFudCIsInNvdXJjZSI6IiIsImNvbnN0YW50IjoiMjAyNi0xMS0xNyIsInRyYW5zZm9ybSI6Im5vbmUiLCJwYXJhbSI6IiIsImVuYWJsZWQiOnRydWUsIm9yaWdpbiI6InlvdSIsIm5vdGUiOiJSZXF1aXJlZDogZW50ZXIgYSB2YWx1ZSBvciBwaWNrIGEgZmllbGQiLCJwYXJ0IjoicmVjb3JkIn0seyJpZCI6InI2aGdkbiIsInRhcmdldCI6ImRpcmVjdDp3YXNfbW9kaWZpZWQiLCJtb2RlIjoicGF0aCIsInNvdXJjZSI6Indhc19tb2RpZmllZCIsImNvbnN0YW50IjoiIiwidHJhbnNmb3JtIjoibm9uZSIsInBhcmFtIjoiIiwiZW5hYmxlZCI6dHJ1ZSwib3JpZ2luIjoiY29ycHVzIiwibm90ZSI6InVzZWQgaW4gNCBwYXN0IG1hcHBpbmdzOyBmaWVsZCBuYW1lIiwicGFydCI6InJlY29yZCJ9LHsiaWQiOiJyMTJocHh3IiwidGFyZ2V0IjoiZGlyZWN0Omhhc19uYXRpdmVfc3ViamVjdCIsIm1vZGUiOiJwYXRoIiwic291cmNlIjoic3ViamVjdCIsImNvbnN0YW50IjoiIiwidHJhbnNmb3JtIjoibm9uZSIsInBhcmFtIjoiIiwiZW5hYmxlZCI6dHJ1ZSwib3JpZ2luIjoiY29ycHVzIiwibm90ZSI6InVzZWQgaW4gNCBwYXN0IG1hcHBpbmdzOyBmaWVsZCBuYW1lIiwicGFydCI6InJlY29yZCJ9LHsiaWQiOiJyMTltam52IiwidGFyZ2V0IjoiZGlyZWN0Omhhc19BUklBRE5FX3N1YmplY3QiLCJtb2RlIjoiY29uc3RhbnQiLCJzb3VyY2UiOiIiLCJjb25zdGFudCI6IkFydGVmYWN0IiwidHJhbnNmb3JtIjoibm9uZSIsInBhcmFtIjoiIiwiZW5hYmxlZCI6dHJ1ZSwib3JpZ2luIjoieW91Iiwibm90ZSI6IlJlcXVpcmVkOiBvbmUgb2YgdGhlIDE0IEFSSUFETkUgc3ViamVjdHMgKGV4YWN0IHNwZWxsaW5nKSIsInBhcnQiOiJyZWNvcmQifSx7ImlkIjoicjE4aG9nZCIsInRhcmdldCI6ImRpcmVjdDpoYXNfdHlwZSIsIm1vZGUiOiJjb25zdGFudCIsInNvdXJjZSI6IiIsImNvbnN0YW50IjoicHJvdmlkZWQgcmVjb3JkIiwidHJhbnNmb3JtIjoibm9uZSIsInBhcmFtIjoiIiwiZW5hYmxlZCI6dHJ1ZSwib3JpZ2luIjoibmVlZGVkIiwibm90ZSI6IlJlcXVpcmVkOiBhIHVzdWFsIHZhbHVlLCBwbGVhc2UgY2hlY2siLCJwYXJ0IjoicmVjb3JkIn0seyJpZCI6InIyNGtyZDAiLCJ0YXJnZXQiOiJkaXJlY3Q6aGFzX2RhdGFfdHlwZSIsIm1vZGUiOiJjb25zdGFudCIsInNvdXJjZSI6IiIsImNvbnN0YW50IjoiU3RydWN0dXJlZCBEYXRhIiwidHJhbnNmb3JtIjoibm9uZSIsInBhcmFtIjoiIiwiZW5hYmxlZCI6dHJ1ZSwib3JpZ2luIjoibmVlZGVkIiwibm90ZSI6IlJlcXVpcmVkOiBhIHVzdWFsIHZhbHVlLCBwbGVhc2UgY2hlY2siLCJwYXJ0IjoicmVjb3JkIn0seyJpZCI6InIyMGhnejQiLCJ0YXJnZXQiOiJkaXJlY3Q6aGFzX2FjY2Vzc19yaWdodHMiLCJtb2RlIjoiY29uc3RhbnQiLCJzb3VyY2UiOiIiLCJjb25zdGFudCI6IkFEUyBUZXJtcyBvZiBVc2UgYW5kIEFjY2VzcyIsInRyYW5zZm9ybSI6Im5vbmUiLCJwYXJhbSI6IiIsImVuYWJsZWQiOnRydWUsIm9yaWdpbiI6Im5lZWRlZCIsIm5vdGUiOiJSZXF1aXJlZDogYSB1c3VhbCB2YWx1ZSwgcGxlYXNlIGNoZWNrIiwicGFydCI6InJlY29yZCJ9LHsiaWQiOiJyMTE0NTZ4IiwidGFyZ2V0IjoiZGlyZWN0Omhhc19hY2Nlc3NfcG9saWN5IiwibW9kZSI6InBhdGgiLCJzb3VyY2UiOiJoYXNfYWNjZXNzX3JpZ2h0cyIsImNvbnN0YW50IjoiIiwidHJhbnNmb3JtIjoibm9uZSIsInBhcmFtIjoiIiwiZW5hYmxlZCI6dHJ1ZSwib3JpZ2luIjoiY29ycHVzIiwibm90ZSI6InVzZWQgaW4gMSBwYXN0IG1hcHBpbmc7IHZhbHVlcyBhcmUgVVJMcyIsInBhcnQiOiJyZWNvcmQifSx7ImlkIjoicjIyemJzdiIsInRhcmdldCI6ImRpcmVjdDppc19wYXJ0X29mIiwibW9kZSI6ImNvbnN0YW50Iiwic291cmNlIjoiIiwiY29uc3RhbnQiOiJST0FEMjAyNiIsInRyYW5zZm9ybSI6Im5vbmUiLCJwYXJhbSI6IiIsImVuYWJsZWQiOnRydWUsIm9yaWdpbiI6ImF1dG8iLCJub3RlIjoiPSB0aGUgY29sbGVjdGlvbiBtYWRlIGJ5IHRoaXMgbWFwcGluZyAoQ29sbGVjdGlvblVSSS0yIMK3IEFEUyDCtyBpdHMgdGl0bGUpLCB1cGRhdGVkIGF1dG9tYXRpY2FsbHkuIFRvIHVzZSBhbiBleGlzdGluZyBBUklBRE5FIGNvbGxlY3Rpb24sIGVudGVyIGl0cyBVUkkgaGVyZSIsInBhcnQiOiJyZWNvcmQifSx7ImlkIjoicjR2dWpmIiwidGFyZ2V0IjoiYWdlbnQ6Y3JlYXRvcjphZ2VudF9uYW1lIiwibW9kZSI6InBhdGgiLCJzb3VyY2UiOiJoYXNfY3JlYXRvciIsImNvbnN0YW50IjoiIiwidHJhbnNmb3JtIjoibm9uZSIsInBhcmFtIjoiIiwiZW5hYmxlZCI6dHJ1ZSwib3JpZ2luIjoiY29ycHVzIiwibm90ZSI6InVzZWQgaW4gMSBwYXN0IG1hcHBpbmc7IHVzZWQgaW4gNSBwYXN0IG1hcHBpbmdzOyBmaWVsZCBuYW1lIiwicGFydCI6InJlY29yZCJ9LHsiaWQiOiJyMTRwZGd2IiwidGFyZ2V0IjoiYWdlbnQ6Y29udHJpYnV0b3I6YWdlbnRfbmFtZSIsIm1vZGUiOiJwYXRoIiwic291cmNlIjoiaGFzX2NvbnRyaWJ1dGVyIiwiY29uc3RhbnQiOiIiLCJ0cmFuc2Zvcm0iOiJub25lIiwicGFyYW0iOiIiLCJlbmFibGVkIjp0cnVlLCJvcmlnaW4iOiJjb3JwdXMiLCJub3RlIjoidXNlZCBpbiAxIHBhc3QgbWFwcGluZzsgZmllbGQgbmFtZSIsInBhcnQiOiJyZWNvcmQifSx7ImlkIjoicjgzeTVtIiwidGFyZ2V0IjoiYWdlbnQ6cHVibGlzaGVyOmFnZW50X25hbWUiLCJtb2RlIjoicGF0aCIsInNvdXJjZSI6Imhhc19wdWJsaXNoZXIiLCJjb25zdGFudCI6IiIsInRyYW5zZm9ybSI6Im5vbmUiLCJwYXJhbSI6IiIsImVuYWJsZWQiOnRydWUsIm9yaWdpbiI6ImNvcnB1cyIsIm5vdGUiOiJ1c2VkIGluIDEgcGFzdCBtYXBwaW5nOyB1c2VkIGluIDMgcGFzdCBtYXBwaW5nczsgZmllbGQgbmFtZSIsInBhcnQiOiJyZWNvcmQifSx7ImlkIjoicjcxY252IiwidGFyZ2V0IjoiYWdlbnQ6b3duZXI6YWdlbnRfbmFtZSIsIm1vZGUiOiJwYXRoIiwic291cmNlIjoiaGFzX293bmVyIiwiY29uc3RhbnQiOiIiLCJ0cmFuc2Zvcm0iOiJub25lIiwicGFyYW0iOiIiLCJlbmFibGVkIjp0cnVlLCJvcmlnaW4iOiJjb3JwdXMiLCJub3RlIjoidXNlZCBpbiAxIHBhc3QgbWFwcGluZzsgdXNlZCBpbiAzIHBhc3QgbWFwcGluZ3M7IGZpZWxkIG5hbWUiLCJwYXJ0IjoicmVjb3JkIn0seyJpZCI6InIyM3hmNDIiLCJ0YXJnZXQiOiJhZ2VudDpyZXNwb25zaWJsZTphZ2VudF9uYW1lIiwibW9kZSI6ImNvbnN0YW50Iiwic291cmNlIjoiIiwiY29uc3RhbnQiOiJXaG9ldmVyIHJlc3BvbnNpYmxlIiwidHJhbnNmb3JtIjoibm9uZSIsInBhcmFtIjoiIiwiZW5hYmxlZCI6dHJ1ZSwib3JpZ2luIjoieW91Iiwibm90ZSI6IlJlcXVpcmVkOiBlbnRlciBhIHZhbHVlIG9yIHBpY2sgYSBmaWVsZCIsInBhcnQiOiJyZWNvcmQifSx7ImlkIjoicjEwaGJraCIsInRhcmdldCI6InBvaW50OmxhdGl0dWRlIiwibW9kZSI6InBhdGgiLCJzb3VyY2UiOiJ5IiwiY29uc3RhbnQiOiIiLCJ0cmFuc2Zvcm0iOiJub25lIiwicGFyYW0iOiIiLCJlbmFibGVkIjp0cnVlLCJvcmlnaW4iOiJjb3JwdXMiLCJub3RlIjoidXNlZCBpbiAxIHBhc3QgbWFwcGluZzsgZmllbGQgbmFtZSIsInBhcnQiOiJyZWNvcmQifSx7ImlkIjoicjlqcnlpIiwidGFyZ2V0IjoicG9pbnQ6bG9uZ2l0dWRlIiwibW9kZSI6InBhdGgiLCJzb3VyY2UiOiJ4IiwiY29uc3RhbnQiOiIiLCJ0cmFuc2Zvcm0iOiJub25lIiwicGFyYW0iOiIiLCJlbmFibGVkIjp0cnVlLCJvcmlnaW4iOiJjb3JwdXMiLCJub3RlIjoidXNlZCBpbiAxIHBhc3QgbWFwcGluZzsgZmllbGQgbmFtZSIsInBhcnQiOiJyZWNvcmQifSx7ImlkIjoicjEzYW1xdyIsInRhcmdldCI6ImNvdW50cnk6Y291bnRyeV9uYW1lIiwibW9kZSI6InBhdGgiLCJzb3VyY2UiOiJjb3VudHJ5IiwiY29uc3RhbnQiOiIiLCJ0cmFuc2Zvcm0iOiJub25lIiwicGFyYW0iOiIiLCJlbmFibGVkIjp0cnVlLCJvcmlnaW4iOiJjb3JwdXMiLCJub3RlIjoidXNlZCBpbiAxIHBhc3QgbWFwcGluZzsgZmllbGQgbmFtZSIsInBhcnQiOiJyZWNvcmQifSx7ImlkIjoicjE2YW5xNCIsInRhcmdldCI6ImNvdW50cnk6d2lraWRhdGFfdXJpIiwibW9kZSI6InBhdGgiLCJzb3VyY2UiOiJ3aWtpZGF0YV9xY29kZV91cmkiLCJjb25zdGFudCI6IiIsInRyYW5zZm9ybSI6Im5vbmUiLCJwYXJhbSI6IiIsImVuYWJsZWQiOnRydWUsIm9yaWdpbiI6InZhbHVlIiwibm90ZSI6InZhbHVlcyBhcmUgV2lraWRhdGEgVVJMcyAoY291bnRyeT8gY2hlY2spIiwicGFydCI6InJlY29yZCJ9XSwic2V0dGluZ3MiOnsidGl0bGUiOiJST0FEMjAyNiIsInJlY29yZE5hbWUiOiJhc3NlbWJsYWdlIiwicmVjb3JkRmlsdGVyIjoiIiwicHJvdmlkZXIiOiJIU0RTIiwiY29sbGVjdGlvblByb3ZpZGVyIjoiQURTIiwiY29sbGVjdGlvbkxhYmVsIjoiIiwiY29uY2VwdFNjaGVtZSI6IkFEUyIsImxhbmd1YWdlIjoiZW4iLCJyZXNvdXJjZVR5cGUiOiJhb2NhdDpBT19JbmRpdmlkdWFsX0RhdGFfUmVzb3VyY2UiLCJ1cHBlcmNhc2VDb25jZXB0VGVybXMiOnRydWUsImFkc0xhYmVscyI6dHJ1ZSwicGVyaW9kUXVhbGlmaWVyIjoiIiwibmFtZXNwYWNlcyI6e30sImtpbmRGaWVsZCI6IiIsImtpbmRSZWNvcmQiOiJyZWNvcmQiLCJraW5kQ29sbGVjdGlvbiI6ImNvbGxlY3Rpb24iLCJjb2xsZWN0aW9uS2V5IjoiIiwiY29sbGVjdGlvbk1vZGUiOiJmaXhlZCIsImRhdGFzb3VyY2UiOiJhZHMiLCJhcGlOYW1lIjoiIiwiaHJpZCI6IiIsImJhc2VVcmwiOiIiLCJwZXJpb2RvU2NoZW1lIjoiaHR0cDovL24ydC5uZXQvYXJrOi85OTE1Mi9wMGtoOWRzIiwiZW5yaWNoIjp7fSwiY29sbGVjdGlvblRlcm0iOiIiLCJzb3VyY2VGaWxlTmFtZSI6IlJPQUQyMDI2LnhtbCJ9fQ== -->
