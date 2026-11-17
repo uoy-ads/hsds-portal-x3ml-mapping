@@ -1,0 +1,1593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x3ml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      source_type="xpath"
+      version="1.0"
+      xsi:noNamespaceSchemaLocation="https://isl.ics.forth.gr/x3ml/schema/x3ml.xsd">
+   <info>
+      <title>ATRIUM 5.5.2 Östergotland</title>
+      <general_description/>
+      <source>
+         <source_info>
+            <source_schema schema_file="ostergotland_sample.xml" type="xml" version="">ostergotland_sample</source_schema>
+            <namespaces>
+               <namespace prefix="" uri=""/>
+            </namespaces>
+         </source_info>
+      </source>
+      <target>
+         <target_info>
+            <target_schema schema_file="AO-CAT1.2.3.rdfs" type="rdfs" version="">AO-CAT1.2.3</target_schema>
+            <namespaces>
+               <namespace prefix="aocat"
+                          uri="https://www.ariadne-infrastructure.eu/resource/ao/cat/1.1/"/>
+               <namespace prefix="owl" uri="http://www.w3.org/2002/07/owl#"/>
+               <namespace prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
+               <namespace prefix="skos" uri="http://www.w3.org/2004/02/skos/core#"/>
+               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
+               <namespace prefix="crmpe" uri="http://parthenos.d4science.org/CRMext/CRMpe/"/>
+               <namespace prefix="crm" uri="http://www.cidoc-crm.org/cidoc-crm/"/>
+            </namespaces>
+         </target_info>
+      </target>
+      <mapping_info>
+         <mapping_created_by_org/>
+         <mapping_created_by_person/>
+         <in_collaboration_with/>
+      </mapping_info>
+      <example_data_info>
+         <example_data_from/>
+         <example_data_contact_person/>
+         <example_data_source_record/>
+         <generator_policy_info/>
+         <example_data_target_record/>
+         <thesaurus_info/>
+      </example_data_info>
+   </info>
+   <namespaces>
+      <namespace prefix="ariadneplus" uri="https://ariadne-infrastructure.eu/aocat/"/>
+      <namespace prefix="lexvo" uri="http://lexvo.org/id/iso639-2/"/>
+   </namespaces>
+   <mappings>
+      <mapping>
+         <domain>
+            <source_node>//resource[normalize-space(kind/text())='collection' and normalize-space(id/text())]</source_node>
+            <target_node>
+               <entity>
+                  <type>aocat:AO_Collection</type>
+                  <instance_generator name="CollectionURI-2">
+                     <arg name="provider" type="constant">OG</arg>
+                     <arg name="term" type="xpath">normalize-space(id/text())</arg>
+                  </instance_generator>
+                  <label_generator name="SimpleLabel">
+                     <arg name="label" type="xpath">normalize-space(title[@xml:lang='en']/text())</arg>
+                     <arg name="language" type="constant">en</arg>
+                  </label_generator>
+               </entity>
+            </target_node>
+         </domain>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>id</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_original_id</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>id</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>title[@xml:lang='en']</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_title</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>title[@xml:lang='en']</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>title[@xml:lang='sv']</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_title</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>title[@xml:lang='sv']</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">sv</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>description[@xml:lang='en']</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_description</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>description[@xml:lang='en']</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>landing_page</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_landing_page</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>landing_page</source_node>
+               <target_node>
+                  <entity>
+                     <type>owl:Thing</type>
+                     <instance_generator name="URIorUUID">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>issued</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:was_issued</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>issued</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:dateTime</type>
+                     <instance_generator name="TypedLiteralGen">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>modified</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:was_modified</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>modified</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:dateTime</type>
+                     <instance_generator name="TypedLiteralGen">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>access_rights</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_access_rights</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>access_rights</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>access_policy</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_access_policy</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>access_policy</source_node>
+               <target_node>
+                  <entity>
+                     <type>owl:Thing</type>
+                     <instance_generator name="URIorUUID">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>language</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_language</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>language</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="LangURI">
+                        <arg name="term" type="xpath">normalize-space(@code)</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>publisher[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_publisher</relationship>
+                  <entity>
+                     <type>aocat:AO_Agent</type>
+                     <instance_generator name="AgentURI">
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_homepage</relationship>
+                        <entity>
+                           <type>http://www.ics.forth.gr/isl/CRMdig/D9_Data_Object</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">normalize-space(@homepage)</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                     <additional>
+                        <relationship>aocat:has_email</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">normalize-space(@email)</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+                  <relationship>aocat:has_name</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>publisher[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>creator[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_creator</relationship>
+                  <entity>
+                     <type>aocat:AO_Agent</type>
+                     <instance_generator name="AgentURI">
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+                  <relationship>aocat:has_name</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>creator[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>contributor[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_contributor</relationship>
+                  <entity>
+                     <type>aocat:AO_Agent</type>
+                     <instance_generator name="AgentURI">
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+                  <relationship>aocat:has_name</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>contributor[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>responsible[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_responsible</relationship>
+                  <entity>
+                     <type>aocat:AO_Agent</type>
+                     <instance_generator name="AgentURI">
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+                  <relationship>aocat:has_name</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>responsible[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>owner[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_owner</relationship>
+                  <entity>
+                     <type>aocat:AO_Agent</type>
+                     <instance_generator name="AgentURI">
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_homepage</relationship>
+                        <entity>
+                           <type>http://www.ics.forth.gr/isl/CRMdig/D9_Data_Object</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">normalize-space(@homepage)</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+                  <relationship>aocat:has_name</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>owner[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>type</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_type</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>type</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="ConceptURI-2">
+                        <arg name="scheme" type="constant">AO_Type</arg>
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>data_type</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_data_type</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>data_type</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="ConceptURI-2">
+                        <arg name="scheme" type="constant">AO_DataType</arg>
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>ariadne_subject</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_ARIADNE_subject</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>ariadne_subject</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="ConceptURI-2">
+                        <arg name="scheme" type="constant">AO_Subject</arg>
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>subject[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_native_subject</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>subject[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="ConceptURI-2">
+                        <arg name="scheme" type="constant">OG</arg>
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(@sv)</arg>
+                        <arg name="language" type="constant">sv</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>is_part_of[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:is_part_of</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>is_part_of[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Collection</type>
+                     <instance_generator name="CollectionURI-2">
+                        <arg name="provider" type="constant">OG</arg>
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">normalize-space(text())</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>spatial[normalize-space(place_name/text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_spatial_coverage</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>spatial[normalize-space(place_name/text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Spatial_Region</type>
+                     <instance_generator name="PlaceURI-2">
+                        <arg name="arg1" type="constant">OG</arg>
+                        <arg name="arg2" type="xpath">concat('geonames/', normalize-space(geonames/text()))</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(place_name/text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_place_name</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">normalize-space(place_name/text())</arg>
+                              <arg name="language" type="constant">en</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                     <additional>
+                        <relationship>aocat:has_place_IRI</relationship>
+                        <entity>
+                           <type>owl:Thing</type>
+                           <instance_generator name="URIorUUID">
+                              <arg name="text" type="xpath">concat('http://sws.geonames.org/', normalize-space(geonames/text()))</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                     <additional>
+                        <relationship>aocat:has_country</relationship>
+                        <entity>
+                           <type>owl:Thing</type>
+                           <instance_generator name="URIorUUID">
+                              <arg name="text" type="xpath">concat('http://www.wikidata.org/entity/', normalize-space(country/@wikidata))</arg>
+                           </instance_generator>
+                           <label_generator name="SimpleLabel">
+                              <arg name="label" type="xpath">normalize-space(country/text())</arg>
+                              <arg name="language" type="constant">en</arg>
+                           </label_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>point[normalize-space(lat/text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_spatial_coverage</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>point[normalize-space(lat/text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Spatial_Region_Point</type>
+                     <instance_generator name="PlaceURI-2">
+                        <arg name="arg1" type="constant">OG</arg>
+                        <arg name="arg2" type="xpath">concat('point/', normalize-space(lat/text()), '/', normalize-space(lon/text()))</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">concat(normalize-space(lat/text()), ', ', normalize-space(lon/text()))</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_latitude</relationship>
+                        <entity>
+                           <type>xsd:decimal</type>
+                           <instance_generator name="TypedLiteralGen">
+                              <arg name="text" type="xpath">normalize-space(lat/text())</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                     <additional>
+                        <relationship>aocat:has_longitude</relationship>
+                        <entity>
+                           <type>xsd:decimal</type>
+                           <instance_generator name="TypedLiteralGen">
+                              <arg name="text" type="xpath">normalize-space(lon/text())</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>geometry[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_spatial_coverage</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>geometry[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Spatial_Region_Polygon</type>
+                     <instance_generator name="PlaceURI-2">
+                        <arg name="arg1" type="constant">OG</arg>
+                        <arg name="arg2" type="xpath">concat('polygon/', normalize-space(../id/text()))</arg>
+                     </instance_generator>
+                     <label_generator name="CompositeLabel">
+                        <arg name="label" type="constant">Polygon of</arg>
+                        <arg name="text" type="xpath">normalize-space(../id/text())</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_coordinate_system</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="constant">WGS84 (EPSG:4326)</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                     <additional>
+                        <relationship>aocat:has_polygonal_representation</relationship>
+                        <entity>
+                           <type>rdf:XMLLiteral</type>
+                           <instance_generator name="TypedLiteralGen">
+                              <arg name="text" type="xpath">normalize-space(text())</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>temporal[normalize-space(from/text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_temporal_coverage</relationship>
+                  <entity>
+                     <type>aocat:AO_Temporal_Region</type>
+                     <instance_generator name="Time-SpanURI">
+                        <arg name="term" type="xpath">concat('OG/', normalize-space(from/text()), '/', normalize-space(until/text()))</arg>
+                     </instance_generator>
+                     <label_generator name="CompositeLabel">
+                        <arg name="label" type="constant">Temporal Region</arg>
+                        <arg name="text" type="xpath">concat(normalize-space(from/text()), '/', normalize-space(until/text()))</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:from</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">normalize-space(from/text())</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                     <additional>
+                        <relationship>aocat:until</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">normalize-space(until/text())</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+                  <relationship>aocat:has_native_period</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>temporal[normalize-space(from/text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="ConceptURI-2">
+                        <arg name="scheme" type="constant">OG</arg>
+                        <arg name="term" type="xpath">normalize-space(period/text())</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(period/text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(period_sv/text())</arg>
+                        <arg name="language" type="constant">sv</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+      </mapping>
+      <mapping>
+         <domain>
+            <source_node>//resource[normalize-space(kind/text())='record' and normalize-space(id/text())]</source_node>
+            <target_node>
+               <entity>
+                  <type>aocat:AO_Individual_Data_Resource</type>
+                  <instance_generator name="DataResourceURI-2">
+                     <arg name="provider" type="constant">OG</arg>
+                     <arg name="term" type="xpath">normalize-space(id/text())</arg>
+                  </instance_generator>
+                  <label_generator name="SimpleLabel">
+                     <arg name="label" type="xpath">normalize-space(title[@xml:lang='en']/text())</arg>
+                     <arg name="language" type="constant">en</arg>
+                  </label_generator>
+               </entity>
+            </target_node>
+         </domain>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>id</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_original_id</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>id</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>title[@xml:lang='en']</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_title</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>title[@xml:lang='en']</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>title[@xml:lang='sv']</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_title</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>title[@xml:lang='sv']</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">sv</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>description[@xml:lang='en']</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_description</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>description[@xml:lang='en']</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>landing_page</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_landing_page</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>landing_page</source_node>
+               <target_node>
+                  <entity>
+                     <type>owl:Thing</type>
+                     <instance_generator name="URIorUUID">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>issued</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:was_issued</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>issued</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:dateTime</type>
+                     <instance_generator name="TypedLiteralGen">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>modified</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:was_modified</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>modified</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:dateTime</type>
+                     <instance_generator name="TypedLiteralGen">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>access_rights</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_access_rights</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>access_rights</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>access_policy</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_access_policy</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>access_policy</source_node>
+               <target_node>
+                  <entity>
+                     <type>owl:Thing</type>
+                     <instance_generator name="URIorUUID">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>language</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_language</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>language</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="LangURI">
+                        <arg name="term" type="xpath">normalize-space(@code)</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>publisher[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_publisher</relationship>
+                  <entity>
+                     <type>aocat:AO_Agent</type>
+                     <instance_generator name="AgentURI">
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_homepage</relationship>
+                        <entity>
+                           <type>http://www.ics.forth.gr/isl/CRMdig/D9_Data_Object</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">normalize-space(@homepage)</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                     <additional>
+                        <relationship>aocat:has_email</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">normalize-space(@email)</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+                  <relationship>aocat:has_name</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>publisher[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>creator[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_creator</relationship>
+                  <entity>
+                     <type>aocat:AO_Agent</type>
+                     <instance_generator name="AgentURI">
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+                  <relationship>aocat:has_name</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>creator[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>contributor[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_contributor</relationship>
+                  <entity>
+                     <type>aocat:AO_Agent</type>
+                     <instance_generator name="AgentURI">
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+                  <relationship>aocat:has_name</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>contributor[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>responsible[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_responsible</relationship>
+                  <entity>
+                     <type>aocat:AO_Agent</type>
+                     <instance_generator name="AgentURI">
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+                  <relationship>aocat:has_name</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>responsible[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>owner[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_owner</relationship>
+                  <entity>
+                     <type>aocat:AO_Agent</type>
+                     <instance_generator name="AgentURI">
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_homepage</relationship>
+                        <entity>
+                           <type>http://www.ics.forth.gr/isl/CRMdig/D9_Data_Object</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">normalize-space(@homepage)</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+                  <relationship>aocat:has_name</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>owner[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>xsd:string</type>
+                     <instance_generator name="Literal">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </instance_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>type</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_type</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>type</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="ConceptURI-2">
+                        <arg name="scheme" type="constant">AO_Type</arg>
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>data_type</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_data_type</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>data_type</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="ConceptURI-2">
+                        <arg name="scheme" type="constant">AO_DataType</arg>
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>ariadne_subject</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_ARIADNE_subject</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>ariadne_subject</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="ConceptURI-2">
+                        <arg name="scheme" type="constant">AO_Subject</arg>
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>subject[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_native_subject</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>subject[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="ConceptURI-2">
+                        <arg name="scheme" type="constant">OG</arg>
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(@sv)</arg>
+                        <arg name="language" type="constant">sv</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>is_part_of[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:is_part_of</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>is_part_of[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Collection</type>
+                     <instance_generator name="CollectionURI-2">
+                        <arg name="provider" type="constant">OG</arg>
+                        <arg name="term" type="xpath">normalize-space(text())</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">normalize-space(text())</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>spatial[normalize-space(place_name/text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_spatial_coverage</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>spatial[normalize-space(place_name/text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Spatial_Region</type>
+                     <instance_generator name="PlaceURI-2">
+                        <arg name="arg1" type="constant">OG</arg>
+                        <arg name="arg2" type="xpath">concat('geonames/', normalize-space(geonames/text()))</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(place_name/text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_place_name</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">normalize-space(place_name/text())</arg>
+                              <arg name="language" type="constant">en</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                     <additional>
+                        <relationship>aocat:has_place_IRI</relationship>
+                        <entity>
+                           <type>owl:Thing</type>
+                           <instance_generator name="URIorUUID">
+                              <arg name="text" type="xpath">concat('http://sws.geonames.org/', normalize-space(geonames/text()))</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                     <additional>
+                        <relationship>aocat:has_country</relationship>
+                        <entity>
+                           <type>owl:Thing</type>
+                           <instance_generator name="URIorUUID">
+                              <arg name="text" type="xpath">concat('http://www.wikidata.org/entity/', normalize-space(country/@wikidata))</arg>
+                           </instance_generator>
+                           <label_generator name="SimpleLabel">
+                              <arg name="label" type="xpath">normalize-space(country/text())</arg>
+                              <arg name="language" type="constant">en</arg>
+                           </label_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>point[normalize-space(lat/text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_spatial_coverage</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>point[normalize-space(lat/text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Spatial_Region_Point</type>
+                     <instance_generator name="PlaceURI-2">
+                        <arg name="arg1" type="constant">OG</arg>
+                        <arg name="arg2" type="xpath">concat('point/', normalize-space(lat/text()), '/', normalize-space(lon/text()))</arg>
+                     </instance_generator>
+                     <label_generator name="SimpleLabel">
+                        <arg name="label" type="xpath">concat(normalize-space(lat/text()), ', ', normalize-space(lon/text()))</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_latitude</relationship>
+                        <entity>
+                           <type>xsd:decimal</type>
+                           <instance_generator name="TypedLiteralGen">
+                              <arg name="text" type="xpath">normalize-space(lat/text())</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                     <additional>
+                        <relationship>aocat:has_longitude</relationship>
+                        <entity>
+                           <type>xsd:decimal</type>
+                           <instance_generator name="TypedLiteralGen">
+                              <arg name="text" type="xpath">normalize-space(lon/text())</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>geometry[normalize-space(text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_spatial_coverage</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>geometry[normalize-space(text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Spatial_Region_Polygon</type>
+                     <instance_generator name="PlaceURI-2">
+                        <arg name="arg1" type="constant">OG</arg>
+                        <arg name="arg2" type="xpath">concat('polygon/', normalize-space(../id/text()))</arg>
+                     </instance_generator>
+                     <label_generator name="CompositeLabel">
+                        <arg name="label" type="constant">Polygon of</arg>
+                        <arg name="text" type="xpath">normalize-space(../id/text())</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:has_coordinate_system</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="constant">WGS84 (EPSG:4326)</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                     <additional>
+                        <relationship>aocat:has_polygonal_representation</relationship>
+                        <entity>
+                           <type>rdf:XMLLiteral</type>
+                           <instance_generator name="TypedLiteralGen">
+                              <arg name="text" type="xpath">normalize-space(text())</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>temporal[normalize-space(from/text())]</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>aocat:has_temporal_coverage</relationship>
+                  <entity>
+                     <type>aocat:AO_Temporal_Region</type>
+                     <instance_generator name="Time-SpanURI">
+                        <arg name="term" type="xpath">concat('OG/', normalize-space(from/text()), '/', normalize-space(until/text()))</arg>
+                     </instance_generator>
+                     <label_generator name="CompositeLabel">
+                        <arg name="label" type="constant">Temporal Region</arg>
+                        <arg name="text" type="xpath">concat(normalize-space(from/text()), '/', normalize-space(until/text()))</arg>
+                     </label_generator>
+                     <additional>
+                        <relationship>aocat:from</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">normalize-space(from/text())</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                     <additional>
+                        <relationship>aocat:until</relationship>
+                        <entity>
+                           <type>xsd:string</type>
+                           <instance_generator name="Literal">
+                              <arg name="text" type="xpath">normalize-space(until/text())</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+                  <relationship>aocat:has_native_period</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>temporal[normalize-space(from/text())]</source_node>
+               <target_node>
+                  <entity>
+                     <type>aocat:AO_Concept</type>
+                     <instance_generator name="ConceptURI-2">
+                        <arg name="scheme" type="constant">OG</arg>
+                        <arg name="term" type="xpath">normalize-space(period/text())</arg>
+                     </instance_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(period/text())</arg>
+                        <arg name="language" type="constant">en</arg>
+                     </label_generator>
+                     <label_generator name="prefLabel">
+                        <arg name="text" type="xpath">normalize-space(period_sv/text())</arg>
+                        <arg name="language" type="constant">sv</arg>
+                     </label_generator>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+      </mapping>
+   </mappings>
+</x3ml>
